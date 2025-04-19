@@ -1,0 +1,487 @@
+|| Python Programming ||
+
+1991 - Guido Van Rossum
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|| Chapter - 1: Introduction ||
+
+--> REPL: Read Execute Print Loop
+
+==> to run the code:
+--> python file.py 
+
+
+==> to print the line:
+--> single line: print("<text>", end="")   # end="" is for not adding new line
+--> multi line: print(''' <text> ''')  OR  print(""" <code> """)
+
+
+==> to install Modules:
+--> pip install <module_name>
+
+
+==> to comment code:
+--> single line: #
+--> multi line: """ <code> """  OR  ''' <code> '''
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+|| Chapter - 2: Variables and Datatypes ||
+
+==> Variables:
+
+--> a = 1
+--> b = "Rohan"
+--> c = 22.8
+
+--> Rules:
+1. A variable name can contain digits, numbers, and underscores.
+2. A variable name can only start with alphabet and underscores.
+3. A variable name cannot start with digit.
+4. No white space is allowed to be used in variable name.
+
+
+==> Data Types:
+1. Integers
+2. Floating point numbers
+3. Strings
+4. Booleans
+5. None
+
+
+==> Oparators in Python:
+1. Arithmatic Operator: +, -, *, /
+2. Assignment Operator: =, +=, -=
+3. Comparison Operator: ==, >, <, >=, <=, !=   # return value is always Boolean
+4. Logical Opeator: and, or, not 
+
+--> Values in operation is called as operands.
+Ex. 3 + 7 = 10
+# in this, '3' and '7' are operands, '+' is operator and '10' is result.
+
+--> Logical Operator: not
+# it also works with Boolean operator and revers the value of operand.
+Ex. print(not(True)) 
+Opt. False
+
+
+==> to know the Datatype:
+--> we use type(<var>) funcation to know datatype of variable.
+Ex. a = 10
+    t = type(a)
+    print(t)
+Op. <class 'int'>
+
+
+==> Type Casting:
+--> If we want to change the datatype of variable, there are many functions for every datatype (If possible).
+Ex. str(31) = for converting int to str
+    int("32") = for converting str to int
+    float(32) = for converting int to float
+
+
+==> Taking user input:
+--> for that use input(<text>) function.
+Ex. a = input("Enter Number: ")
+--> It will take input in 'str' form.
+
+
+==> Taking input with specific datatype:
+--> for that enclose the input() function within datatype.
+Ex. for taking input as 'int':
+    a = int(input("Enter Number: "))
+
+
+==> To display the user input with heading:
+--> for that use print() function and after text put comma (,) and write variable.
+Ex. print("The number is:", a)
+
+
+
+-------------------------------------------------------------------------------------------------
+|| Chapter - 3: Strings ||
+
+--> Strings are Immutable. We cannot change the main String.
+--> it can be defined in single (' '), double (" "), and triple (''' ''') quotes.
+--> Triple Quotes are used for multiline string.
+--> Position number of String starts with 0 from first and -1 from last.
+
+
+==> To know lenght of string:
+--> for that we use len() function.
+Ex. a = "Rohan"
+    print(len(a))
+
+
+==> String Slicing:
+--> for that use variable_name[start_index:end_index]
+--> end_index will not be considered for output
+--> If we don't write start_index, it will take 0 by default.
+--> If we don't write end_index, it will take last index by default.
+Ex. name = "Rohan"
+    short = name[0:3] OR short = name[:3]
+    print(short)
+Opt. Roh
+
+
+==> To show specific character:
+--> for that use variable_name[char_pos]
+Ex. name = "Rohan"
+    char1 = name[1]
+    print(char1)
+Opt. o
+
+
+==> Negative Slicing:
+--> for that use variable_name[-start_index:-end_index]
+--> end_index will not be considered for output
+Ex. name = "Rohan"
+    negative = name[-4:-1]
+    print(negative)
+Opt. oha
+
+
+==> Slicing with skip value:
+--> for that use variable_name[start_index:end_index:skipping_value]
+Ex. num = '0123456789'
+    print(num[1:8:2])
+Opt. 1357
+
+
+==> To check whether string starts with specific chars:
+--> for that use variable_name.startswith("<chars>").
+--> It is case sensitive.
+Ex. name = "Rohan"
+    print(name.startswith("Roh"))
+Opt. True
+
+
+==> To check whether string ends with specific chars:
+--> for that use variable_name.endswith("<chars>").
+--> It is case sensitive.
+Ex. name = "Rohan"
+    print(name.endswith("han"))
+Opt. True
+
+
+==> To capitalize the Word:
+--> for that use variable_name.capitalize().
+Ex. name = "rohan"
+    cap_str = name.capitalize()
+Opt. Rohan
+
+
+==> Escape sequence character:
+--> It starts with Black Slash (\) .
+Ex. \n = for new line
+    \t = for tab
+    \" = for printing double quotes ("").
+
+Ex. a = "My Name is "Rohan""
+Opt. Invalid Syntex
+
+Ex. a = "My Name is \"Rohan\""
+Opt. My Name is "Rohan"
+
+
+==> 'f string':
+--> It is used to display variable value within the string.
+--> for that use print(f"<text> {variable_name}")
+Ex. name = "Rohan"
+    print(f"Good Morning, {name}")
+Opt. Good Morning, Rohan
+
+
+==> To find sub-string in main string:
+--> for that use variable_name.find("<text>")
+--> It returns the index of first occurance of the string (if it is available).
+--> It returns '-1' if there is no match of sub-string.
+
+Ex. a = "It is python."
+    print(a.find("pyt"))
+Opt. 6
+
+Ex. a = "It is python."
+    print(a.find("java"))
+Opt. -1
+
+
+
+-----------------------------------------------------------------------------------
+|| Chapter - 4: List and Tuples || 
+
+==> List:
+--> Python Lists are containors to store set of values of any datatype.
+--> Lists are Mutable.
+--> Use Square Brackets [] to denote List.
+--> List of list ia allowed in Python.
+Ex. marks = [["Rohan", 100], ["Rahul", 98]]
+
+
+==> To make List:
+--> use variable_name = ["elm 1", elm 2, elm 0.3]
+Ex. listEx = ["Rohan", 22, 8.04, True]
+
+
+==> To change the element in List:
+--> for that assign the new value to element position using list_name[<pos>] = new_value
+Ex. listEx[0] = "Narigara"
+
+
+==> Some methods of List:
+--> list_name.append("<new_elm>") = to add new element at the end of List
+--> list_name.sort() = to sort the elements in increasing order
+--> list_name.revers() = to sort the elements in decreasing order
+--> list_name.insert(index_number, new_elm) = to insert new element on perticular index
+--> list_name.pop(index_number) = to remove the element from perticular index
+--> list_name.remove(<elm>) = to remove the perticuler element
+
+
+---------------------------
+==> Tuple:
+--> Tuples are container to store a set of values of any datatype.
+--> Tuples are also Immutable.
+--> Use Paranthesis () to make Tuple.
+
+
+==> To make Tuple:
+--> use tuple_name = (elm 1, elm 2, elm 3)
+Ex. numbers = (1, 5, 76)
+    names = ("Abhay", "Babita", "Chetan")
+
+
+==> To make tuple with only one element:
+--> use tuple_name = (elm 1, )
+Ex. num = (1, )
+
+
+==> Some methods of Tuple:
+--> tuple_name.count(<elm>) = to count the occurance of element
+--> tuple_name.index(<elm>) = to find the first occurance of element (if not available, it raises ValueError)
+
+
+
+
+--------------------------------------------------------------------------------------------------------------
+|| Chapter - 5:     Dictionary and Sets ||
+
+==> Dictionary:
+--> It is used to store key-value kind of Data.
+--> It is unorderd.
+--> It is Mutable.
+--> It is indexed.
+--> It cannot contain duplicate data.
+
+
+==> To make Dictionary:
+--> use dict_name = { "key" : "value", "key" : "value"}
+Ex. marks = {"Rohan" : 99, "Rakesh" : 85}
+
+
+==> To make empty Dictionary:
+--> use dict_name = {}
+Ex. d = {}
+
+
+==> To display data from Dictionary:
+--> use print(dict_name[<key>])
+--> It returns value of respective key as output.
+--> If key does not exist in Dictionary, it prints none.
+Ex. marks = {"Rohan" : 99, "Rakesh" : 85}
+    print(marks["Rohan"])
+Opt. 99
+
+
+==> Some methods in Dictionary:
+--> dict_name.items() = returns all the elements in key-value pair (in tuple)
+--> dict_name.keys() = returns all the keys of Dictionary
+--> dict_name.update({<key>:<value>}) = updates the value of respective key. and if key is not available, it appends data in Dictionary
+--> dict_name.get(<key>) = return the value of respective key. If key does not exist in Dictionary, it prints none.
+
+
+
+------------------------------------------------
+==> Sets:
+--> Set is a collection of non-repetitive elements.
+--> Use Curly Braces {} to make set.
+--> It does not maintains the order.
+--> We cannot access elements by index.
+--> We can store multi-datatype elements in set.
+
+
+==> To make set:
+--> use set_name = {elm1, elm2}
+Ex. a = {1, 2}
+
+
+==> To make empty set:
+--> use set() method to make empty set.
+Ex. e = set()
+
+
+==> Some methods of Set:
+--> set_name.add(<elm>) = to add element in set
+--> len(set_name) = to know lenght of set
+--> set_name.remove(<elm>) = to remove the specific element
+--> set_name.pop() = to remove random element from Set
+--> set_name.union(set2_name) = to union two Sets
+--> set_name.intersection(set2_name) = to get common elements from two Sets
+
+
+
+------------------------------------------------------------------------------------------------------------
+|| Chapter - 6: Conditional Expression ||
+
+==> if/else:
+--> Used for single condition.
+--> Indentation is must.
+
+--> Syntex:
+--> if(condition):
+        <code>  --> Executes, if the condition is True.
+    else:
+        <code>  --> Executes, if the condition is False.
+
+
+==> if/elif/else ladder:
+--> Used for different-different multiple conditions
+
+--> Syntex:
+--> if(condition):
+        <code>  --> Executes, if the 1st condition is True.
+    elif(condition2):
+        <code>  --> Executes, if the 1st condition is not True and 2nd condition is True.
+    else:
+        <code>  --> Executes, if both conditions are False.
+
+
+
+
+------------------------------------------------------------------------------------------------------------------
+|| Chapter - 7: Loops in Python ||
+
+==> Types of Loop:
+1. While Loop
+2. For Loop
+
+
+==> While Loop:
+--> Syntex: while(condition):
+                <code>
+
+Ex: while(i<6):
+        print(i)
+        i += 1
+
+Opt: 1
+     2
+     3
+     4
+     5
+    
+
+==> for loop:
+--> Syntex: for i in range(<variable_name> / start_index, end_index+1, step_size)
+                <code>
+
+Ex: for i in range(0, 7)
+        print(i)
+
+Opt: 0
+     1
+     2
+     3
+     4
+     5
+     6
+
+
+==> for loop with else:
+--> Syntex: for i in range(<variable_name> / start_index, end_index+1, step_size)
+                <code>
+            else:
+                <code>
+
+
+==> break in loop:
+--> It is use to exit the loop in between.
+
+--> Syntex: for i in range(<variable_name> / start_index, end_index+1, step_size)
+                if(condition):
+                    break
+                <code>
+
+
+==> continue in loop:
+--> It is use to continue the loop and skip specific iteration.
+
+--> Syntex: for i in range(<variable_name> / start_index, end_index+1, step_size)
+                if(condition):
+                    continue
+                <code>
+
+
+==> pass in loop:
+--> used to ignore the loop.
+--> When we don't want to execute the loop.
+
+--> Syntex: for i in range(<variable_name> / start_index, end_index+1, step_size)
+                if(condition):
+                    pass
+
+
+
+----------------------------------------------------------------------------------------------------------
+|| Chapter - 8: Functions and Recursions ||
+
+==> Functions:
+--> Function is a piece of code written to carry out specific task.
+
+
+==> To define function:
+--> Syntex: def function_name(arguments):
+                <code>
+                return <smt>
+                
+            function_name()  #This is to run / call the function
+
+--> Without Arguments
+Ex. def avg():
+        a = int(input("Enter 1st num: ))
+        b = int(input("Enter 2st num: ))
+        average = (a + b) / 2
+        print(f"average is {average}")
+
+    avg()
+
+
+--> With Arguments:
+def greet(name, ending = "Thanks")
+    print(f"Have a Good Day {name}")
+    print(ending)
+    return "done"
+
+greet("Rohan", "Thank You")
+
+Opt. Have a Good Day Rohan
+     Thank You
+     done
+
+
+
+==> Recursions:
+--> Recursion is the function that calls itself.
+--> Base condition is necessary in Recursion.
+
+
+Ex. n = 5
+    def factorial(n):
+        if(n == 1 or n == 0):
+            return 1
+        return n * factorial(n-1)
+
+    print(f"Factorial of {n} is: {factorial(n)}")
+
+Opt. Factorial of 5 is 125
