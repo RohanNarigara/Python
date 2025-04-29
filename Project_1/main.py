@@ -42,6 +42,16 @@ while (ch.lower() == "y"):
                   print("You Win!")
             elif(user == 1 and computer == 0):
                   print("You Lose!")
+
+            #------------------------------------------------------
+            # An alternet way to make same game but in less line of code
+            # if (user == computer):
+            #       print("It's a Draw!")
+            # elif (user - computer == -1 or user - computer == 2):
+            #       print("You Win!")
+            # else:
+            #       print("You Lose!")
+
       else:
             print("Something went Wrong!")
       
