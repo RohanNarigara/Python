@@ -458,7 +458,7 @@ Ex. def avg():
 
 
 --> With Arguments:
-def greet(name, ending = "Thanks")
+def greet(name, ending = "Thanks"):
     print(f"Have a Good Day {name}")
     print(ending)
     return "done"
@@ -485,3 +485,65 @@ Ex. n = 5
     print(f"Factorial of {n} is: {factorial(n)}")
 
 Opt. Factorial of 5 is 125
+
+
+
+------------------------------------------------------------------------------------------------
+|| Chapter - 9: File I/O ||
+
+--> Open File:
+--> to open file use built-in python function open(<file_name>).
+
+Ex. f = open("file.txt", "r")
+--> "r" is to open file in read mode. However, file automaticaly opens in read mode.
+
+
+--> Close File:
+--> to close the file use built-in function file_variable.close().
+
+Ex. f = open("file.txt")
+    f.close()
+
+
+--> Read File:
+--> to read the file use file_variable.read().
+Ex. f = open("file.txt")
+    data = f.read()
+
+
+--> Write File:
+--> to write in file use file_variable.write(data)
+
+Ex. f = open("file.txt", "w")
+    str = "Hello, How are you?"
+    f.write(str)
+--> "w" is for opening file in write mode
+
+
+--> Read multiple lines:
+--> to read multiple lines use file_variable.readlines()
+
+Ex. f = open("file.txt")
+    lines = f.readlines()
+--> it will print all the lines of file and return it as a list.
+
+
+--> Read single line by line:
+--> to read lines of file line by line use file_variable.readline()
+
+Ex. f = open("file.txt")
+    line1 = f.readline()
+    print(line1)
+    line2 = f.readline()
+    print(line2)
+--> it will print all lines, line by line and return it as a String.
+
+
+--> Append File:
+--> to append anything in file use file_variable.append(data)
+
+Ex. f = open("file.txt", "a")
+    str = "Hello, How are you?"
+    f.append(str)
+--> "a" is for opening file in append mode.
+

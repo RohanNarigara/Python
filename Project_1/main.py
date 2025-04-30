@@ -44,8 +44,8 @@ while (ch.lower() == "y"):
                   print("You Lose!")
 
             #------------------------------------------------------
-            '''An alternet way to make same game but in less line of code 
-               It is analized on the basis of user - computer.
+            '''An alternate way to make same game but in less line of code 
+            It is analyzed on the basis of user - computer.
             '''
             # if (user == computer):
             #       print("It's a Draw!")
