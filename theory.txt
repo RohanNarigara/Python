@@ -547,3 +547,13 @@ Ex. f = open("file.txt", "a")
     f.append(str)
 --> "a" is for opening file in append mode.
 
+
+--> With Statement:
+--> using it we don't have to write file_name.close() every time.
+
+--> Syntex: with open(file_name) as f:
+                f.read()
+
+Ex. with open("file.txt", "r") as f:
+        print(f.read())
+
