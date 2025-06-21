@@ -265,7 +265,7 @@ Ex. num = (1, )
 
 
 --------------------------------------------------------------------------------------------------------------
-|| Chapter - 5:     Dictionary and Sets ||
+|| Chapter - 5: Dictionary and Sets ||
 
 ==> Dictionary:
 --> It is used to store key-value kind of Data.
@@ -557,3 +557,150 @@ Ex. f = open("file.txt", "a")
 Ex. with open("file.txt", "r") as f:
         print(f.read())
 
+
+
+--------------------------------------------------------------------------------------------------
+|| Chapter - 10: Object Oriented Programming (OOP) ||
+
+--> Class: 
+--> Class is a blueprint for creating form.
+
+--> Syntax:
+    class Class_Name:
+            <code>
+
+Ex. class Employee:
+        language = "Python"
+        salary = 1200000
+
+    harry = Employee()
+    harry.name = "Harry"
+
+--> Here name is an instance-attribute and language and salary are the class-attributes.
+
+
+--> Function inside of Class:
+--> When we declare function inside the class, we have to use "def function_name(self):". (we can write anything instead of self.)
+--> It is because when the class' function is called by any instance that becomes ClassName.function_name(instance_name).
+
+--> Syntax:
+    class ClassName:
+        def function_name(self):
+            <code>
+
+Ex. class Employee:
+        language = "Python"
+        salary = 1200000
+
+        def getInfo(self):
+            print(f"The Language is {self.language}. The Salary is {self.salary}")
+
+    harry = Employee()
+    harry.getInfo()  // It basically converts into Employee.getInfo(harry)
+
+
+--> Static method:
+--> If there is any method that doesn't use any object and we don't want to pass any object (self) as a argument/s, at that time we can use Static methods.
+
+--> Syntax:
+    class ClassName:
+        @staticmethod
+        def function_name():
+            <code>
+Ex.
+    class Employee:
+        language = "Python"
+        salary = 1200000
+
+        def getInfo(self):
+            print(f"The Language is {self.language}. The Salary is {self.salary}")
+
+        @staticmethod
+        def greet():
+            print("Hello, Good Morning")
+
+    harry = Employee()
+    harry.greet()
+    harry.getInfo()
+
+
+--> Constructor:
+--> __init__():
+--> __init__() is the Constructor that runs as soon as the object is created.
+--> It takes self argument and also can take multiple other arguments.
+--> The methods that start and end with __ (Double Underscores) is also called as dunder methods
+
+--> Syntax:
+    def __init__(self):
+        <code>
+
+Ex. class Employee:
+        language = "Python"
+        salary = 1200000
+
+        def __init__(self, language, salary):
+            self.language = language
+            self.salary = salary
+            print("I am running")
+
+    harry = Employee("JavaScript", 1300000)
+
+
+--> Use n**num for raising it on n.
+
+
+------------------------------------------------------------------------------------------
+|| Chapter - 11: Inheritance and more about OOPs ||
+
+--> Inheritance:
+--> Inheritance is the way of creating a new class from an existing class.
+--> Inheritance is used to access the functions of parent class in one or more child classes.
+--> We can use all the methods and attributes of parent class in child class.
+
+--> Types of Inheritance:
+    1. Single Inheritance
+    2. Multiple Inheritance
+    3. Multi-Level Inheritance
+
+--> Syntax:
+    class Parent():
+        def func1(self):
+            <code>
+
+    class Child1(Parent):
+        def func2(self):
+            <code>
+
+    p = Parent()
+    c = Child1()
+    
+
+Ex. class Parent():
+        company = "ITC"
+        def show(self):
+            print("I am parent")
+
+    class Child1(Parent):
+        company = "ITC Infotech"
+        def showName(self):
+            print("I am Child of Parent")
+
+    p = Parent()
+    c = Child1()
+
+    print(p.company, c.company)
+
+
+--> super() method:
+--> super() method is used to access the methods of a super class in derived class.
+
+Ex. class Parent():
+        company = "ITC"
+        def show(self):
+            print("I am parent")
+
+    class Child1(Parent):
+        company = "ITC Infotech"
+        super().show()
+        def showName(self):
+            print("I am Child of Parent")
