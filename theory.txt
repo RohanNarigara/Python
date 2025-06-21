@@ -109,7 +109,7 @@ Ex. print("The number is:", a)
 --> Position number of String starts with 0 from first and -1 from last.
 
 
-==> To know lenght of string:
+==> To know length of string:
 --> for that we use len() function.
 Ex. a = "Rohan"
     print(len(a))
@@ -180,7 +180,7 @@ Ex. \n = for new line
     \" = for printing double quotes ("").
 
 Ex. a = "My Name is "Rohan""
-Opt. Invalid Syntex
+Opt. Invalid Syntax
 
 Ex. a = "My Name is \"Rohan\""
 Opt. My Name is "Rohan"
@@ -338,7 +338,7 @@ Ex. e = set()
 --> Used for single condition.
 --> Indentation is must.
 
---> Syntex:
+--> Syntax:
 --> if(condition):
         <code>  --> Executes, if the condition is True.
     else:
@@ -348,7 +348,7 @@ Ex. e = set()
 ==> if/elif/else ladder:
 --> Used for different-different multiple conditions
 
---> Syntex:
+--> Syntax:
 --> if(condition):
         <code>  --> Executes, if the 1st condition is True.
     elif(condition2):
@@ -368,7 +368,7 @@ Ex. e = set()
 
 
 ==> While Loop:
---> Syntex: while(condition):
+--> Syntax: while(condition):
                 <code>
 
 Ex: while(i<6):
@@ -383,7 +383,7 @@ Opt: 1
     
 
 ==> for loop:
---> Syntex: for i in range(<variable_name> / start_index, end_index+1, step_size)
+--> Syntax: for i in range(<variable_name> / start_index, end_index+1, step_size)
                 <code>
 
 Ex: for i in range(0, 7)
@@ -399,7 +399,7 @@ Opt: 0
 
 
 ==> for loop with else:
---> Syntex: for i in range(<variable_name> / start_index, end_index+1, step_size)
+--> Syntax: for i in range(<variable_name> / start_index, end_index+1, step_size)
                 <code>
             else:
                 <code>
@@ -408,7 +408,7 @@ Opt: 0
 ==> break in loop:
 --> It is use to exit the loop in between.
 
---> Syntex: for i in range(<variable_name> / start_index, end_index+1, step_size)
+--> Syntax: for i in range(<variable_name> / start_index, end_index+1, step_size)
                 if(condition):
                     break
                 <code>
@@ -417,7 +417,7 @@ Opt: 0
 ==> continue in loop:
 --> It is use to continue the loop and skip specific iteration.
 
---> Syntex: for i in range(<variable_name> / start_index, end_index+1, step_size)
+--> Syntax: for i in range(<variable_name> / start_index, end_index+1, step_size)
                 if(condition):
                     continue
                 <code>
@@ -427,7 +427,7 @@ Opt: 0
 --> used to ignore the loop.
 --> When we don't want to execute the loop.
 
---> Syntex: for i in range(<variable_name> / start_index, end_index+1, step_size)
+--> Syntax: for i in range(<variable_name> / start_index, end_index+1, step_size)
                 if(condition):
                     pass
 
@@ -441,7 +441,7 @@ Opt: 0
 
 
 ==> To define function:
---> Syntex: def function_name(arguments):
+--> Syntax: def function_name(arguments):
                 <code>
                 return <smt>
                 
@@ -495,7 +495,7 @@ Opt. Factorial of 5 is 125
 --> to open file use built-in python function open(<file_name>).
 
 Ex. f = open("file.txt", "r")
---> "r" is to open file in read mode. However, file automaticaly opens in read mode.
+--> "r" is to open file in read mode. However, file automatically opens in read mode.
 
 
 --> Close File:
@@ -551,7 +551,7 @@ Ex. f = open("file.txt", "a")
 --> With Statement:
 --> using it we don't have to write file_name.close() every time.
 
---> Syntex: with open(file_name) as f:
+--> Syntax: with open(file_name) as f:
                 f.read()
 
 Ex. with open("file.txt", "r") as f:
