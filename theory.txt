@@ -663,7 +663,7 @@ Ex. class Employee:
     3. Multi-Level Inheritance
 
 --> Syntax:
-    class Parent():
+    class Parent:
         def func1(self):
             <code>
 
@@ -675,7 +675,7 @@ Ex. class Employee:
     c = Child1()
     
 
-Ex. class Parent():
+Ex. class Parent:
         company = "ITC"
         def show(self):
             print("I am parent")
@@ -694,7 +694,7 @@ Ex. class Parent():
 --> super() method:
 --> super() method is used to access the methods of a super class in derived class.
 
-Ex. class Parent():
+Ex. class Parent:
         company = "ITC"
         def show(self):
             print("I am parent")
@@ -704,3 +704,69 @@ Ex. class Parent():
         super().show()
         def showName(self):
             print("I am Child of Parent")
+
+
+--> Class-Method:
+--> A class method is a method which is bound to the class not the object of the class.
+--> After using it, we can not change the value of variables assigned within specific class-method outside the class.
+--> For using it, we have to use @classmethod decorator.
+
+
+--> Syntax:
+    class ClassName:
+        variable_ame = "<value>"
+
+        @classmethod
+        def methodName(cls):
+            print(cls.variable_name)
+
+Ex. class Parent:
+        company = "ITC"
+
+        @classmethod
+        def show(cls):
+            print(cls.company)
+
+    p = Parent()
+    p.company = "ICC"
+    p.show()
+
+    --> Output:
+        ITC     // not ICC
+
+
+--> Property Decorators:
+--> Syntax:
+    class ClassName:
+        variable_ame = "<value>"
+
+        @property
+        def methodName(self):
+            return smt
+
+        @property_method.setter
+        def methodName(self):
+            self.smt = 1
+
+Ex. class Parent:
+        company = "ITC"
+
+        @property
+        def name(self):
+            return f"{self.fname} {self.lname}"
+
+        @name.setter
+        def name(self, value):
+            self.fname = value.split(" ")[0]
+            self.lname = value.split(" ")[1]
+
+
+    p = Parent()
+    p.name = "Rohan Narigara"
+    print(p.fname, p.lname)
+
+
+
+----------------------------------------------------------------------------------
+|| Chapter - 12: Advanced Python 1 ||
+
