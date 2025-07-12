@@ -770,3 +770,303 @@ Ex. class Parent:
 ----------------------------------------------------------------------------------
 || Chapter - 12: Advanced Python 1 ||
 
+
+--> Walrus Operator:
+--> It allows to assign the value to variable as a part of the Expression.
+
+Ex. if(n := len([1, 2, 3, 4, 5])) > 3:
+        <code>
+
+
+--> Assigning type:
+--> By assigning type to any variable or method, it will be easy to access all the methods of respected data typed variable.
+--> it is easy for other to understand the code and how to use it.
+
+Ex. n: int = 2
+    name: str = "Rohan"
+
+    def sum(a: int, b: int) -> int:
+        return a + b
+
+    --> '-> int' define the type of return value.
+
+--> Advances Type Hints:
+--> It can be access using "from typing import Tuple, Union, List".
+--> It is also used to assign the data type to variable.
+
+--> Match Case:
+--> It is alternative for Switch-Case in python as python does not have any concept like switch-case.
+
+--> Syntax:
+    match variable_name:
+        case <case1>:
+            <code>
+        case <case2>:
+            <code>
+        case _: // It is for default case.
+            <code>
+
+Ex. def http_status(status):
+        match status:
+            case 200:
+                return "OK"
+            case 404:
+                return "Not Found"
+            case 500:
+                return "Internal Server Error"
+            case _:
+                return "Unknown Status"
+
+    print(http_status(200))
+
+    // Output: OK
+
+
+--> Exception Handling:
+--> For handling the Exceptions, we use try-except.
+
+--> Syntax:
+    try:
+        <code>
+    except Exception as e:
+        print(e)
+
+--> Here, except block invoke only if there is any error or crashing in the code of try block.
+
+
+--> Raising an Error:
+--> For raising an error we have to use 'raise <errorName>'.
+
+--> Syntax:
+    if (<condition>):
+        raise <errorName>("<Error Message>")
+    else:
+        <code>
+
+Ex. a = int(input("Enter Number 1: ))
+    b = int(input("Enter Number 2: ))
+
+    if (b == 0):
+        raise ZeroDivisionError("You can not divide the number with 0")
+    else:
+        print(f"Division is {a/b}")
+
+
+--> Finally Block:
+--> Finally Block runs whether code successfully runs or raises any error or even any other block returns anything.
+--> The main usage of Finally Block is while using it in function
+
+--> Syntax:
+    try:
+        <code>
+    except <Exception>:
+        <code>
+    finally:
+        <code>
+
+
+
+--> if __name__ == "__main__":
+--> When we want that the particular code runs only when the original file is running, at that time we can use __name__ == "__main__".
+
+--> Syntax:
+    if __name__ == "__main__":
+        <code>
+
+--> The code inside the 'if __name__ == "__main__"' will not work if the respected file is imported in the another file.
+
+
+
+--> global Keyword:
+--> We can use global keyword with any variable or function which are not the part of any class or other function to use and modify in existing class or function.
+
+Ex. a = 10
+
+    def fun():
+        a = 3
+        print(a)
+    
+    fun()
+    print(a)
+
+    // Output: 3
+               10
+
+        BUT
+
+Ex. a = 10
+
+    def fun():
+        global a
+        a = 3
+        print(a)
+    
+    fun()
+    print(a)
+
+    // Output: 3
+               3
+
+
+--> Enumerate Function:
+--> enumerate function add counter to an iterable item and returns it.
+
+--> Syntax:
+    for i, item in enumerate(<smt>):
+        <code>
+
+Ex. l = [1,2,3,4,5]
+    for index, item in enumerate(l):
+        print(f"The item at index {index} is {item}")
+
+    --> Output: The item at index 0 is 1
+                The item at index 1 is 2
+                The item at index 2 is 3
+                The item at index 3 is 4
+
+==> List Comprehension:
+--> It is used while we are working with bthe list and want to perform tasks on lists.
+
+Ex. myList = [1, 2, 3, 4, 5]
+    
+    squaredList = []
+    for item in myList:
+        squaredList.append(item*item)
+    
+    print(squaredList)
+
+    // Output: [1, 4, 9, 16, 25]
+
+--> It can be easily done using List Comprehensions with minimum lines of code.
+
+
+Ex. myList = [1, 2, 3, 4, 5]
+
+    squaredList = [i*i for i in myList]
+
+    // Output: [1, 4, 9, 16, 25]
+
+    print(squaredList)
+
+
+
+----------------------------------------------------------------------------------
+|| Chapter - 13: Advanced Python 2 ||
+
+==> virtualenv:
+--> It is an virtual environment of python that doesn't have any relation (isolated) with other python environments installed on the System.
+--> It has all the functionalities of python.
+
+--> to install virtual envitonment, we can simply use "pip install virtualenv" command on terminal.
+
+--> to activate the virtualenv:
+--> for that we have to simply run the command in terminal with the folder open where the virtualenv is installed:
+    ".\env\Scripts\activate.ps1"
+
+--> to deactivate the vistual environment:
+--> for that we have to simply write command in the terminal that is "deactivate" or simply close the terminal.
+
+--> requirements.txt:
+--> it is a file in which we can store all the installed library of environment, so that whenever we want to create new evnironment, we can directly install all these simply.
+--> to create "requirements.txt", we have to simply write command that is "pip freeze > requirements.txt"
+
+--> to install it in other environment, we have to simply write command that is "pip install -r .\requirements.txt".
+
+
+==> Lambda Function:
+--> to make it use lambda keyword followed by function name and = (equal to sign)
+--> In this, we have to provide total arguments while runnig the lambda function.
+
+--> Syntax:
+    variable_name = lambda arguments:expressions
+
+Ex. square = lambda x: x * x
+    print(square(2))
+
+    // Output: 4
+
+
+==> join() function:
+--> It works with strings.
+
+--> Syntax:
+    variable_name = "<char>".join(<variable_name>)
+
+Ex. name = ["Harry", "Rohan", "Shubham"]
+    final = ":".join(name)
+
+    // Output: Harry:Rohan:Shubham
+
+
+==> formate function:
+--> It was used instead of f string.
+
+--> Syntax:
+    "{} <smt> {} <smt>".formate("<replacement>", "<replacement>")
+
+    --> we can also give numbering to arguments and it will print according to it.
+    "{0} <smt> {1} <smt>".formate("<replacement>", "<replacement>")
+
+Ex: a = "{} is a good {}".formate("Rohan", "boy")
+    print(a)
+    // Output: Rohan is a good boy
+
+    a = "{1} is a good {0}".formate("Rohan", "boy")
+    print(a)
+    // Output: boy is a good Rohan
+
+
+==> Map, Filter & Reduce:
+--> All these functions are iterable.
+
+==> Map Function:
+--> It is a function which goes through all the elements in list and performs tasks according to function provided on it.
+
+--> Syntax:
+    variable_name = map(function, input_list)
+
+Ex: l = [1, 2, 3, 4, 5]
+
+    square = lambda x: x*x
+
+    sqList = map(square. l)
+    print(list(sqList))
+
+    // Output: [1, 4, 9, 16, 25]
+
+
+==> Filter Function:
+--> It does filtering of the given list according to function provided as argument.
+--> It creates a list of items for which the given function returns True.
+
+--> Syntax:
+    variable_name = filter(function, input_list)
+
+Ex. l = [1, 2, 3, 4, 5]
+
+    def even(n):
+        if(n % 2 == 0):
+            return True
+        return False
+
+    onlyEven = filter(even, l)
+    print(list(onlyEven))
+
+    // Output: [2, 4]
+
+
+==> Reduce Function:
+--> for using it, we have to import reduce from functool module using "from functool import reduce"
+--> It applies the rolling computation to sequential pair of elements.
+
+--> Syntax:
+    variable_name = reduce(function, input_list)
+
+Ex. l = [1, 2, 3, 4, 5]
+
+    from functool import reduce
+    def sum(a, b):
+        return a + b
+
+    print(reduce(sum, l))
+
