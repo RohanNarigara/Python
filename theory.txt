@@ -959,12 +959,17 @@ Ex. myList = [1, 2, 3, 4, 5]
 
 --> to install virtual envitonment, we can simply use "pip install virtualenv" command on terminal.
 
+--> to create the virtual environment, we have to simply use "virtualenv <env_name>" command.
+
 --> to activate the virtualenv:
 --> for that we have to simply run the command in terminal with the folder open where the virtualenv is installed:
-    ".\env\Scripts\activate.ps1"
+    ".\<env_name>>\Scripts\activate.ps1"
 
 --> to deactivate the vistual environment:
 --> for that we have to simply write command in the terminal that is "deactivate" or simply close the terminal.
+
+--> to list all the installed packages info:
+--> for that we simply have to type one command that is "pip freeze".
 
 --> requirements.txt:
 --> it is a file in which we can store all the installed library of environment, so that whenever we want to create new evnironment, we can directly install all these simply.
@@ -1069,4 +1074,5 @@ Ex. l = [1, 2, 3, 4, 5]
         return a + b
 
     print(reduce(sum, l))
+
 
